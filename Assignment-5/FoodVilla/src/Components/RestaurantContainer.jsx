@@ -7,8 +7,9 @@ import Shimmer from './Shimmer';
 
 function filterData(searchText, restaurants){
     const filterData = restaurants.filter( (restaurant) =>
-        restaurant.title.includes(searchText)
+        restaurant.title.toLowerCase().includes(searchText.toLowerCase())
     )
+    // console.log(filterData)
     return filterData;
 }
 
@@ -34,7 +35,7 @@ const RestaurantContainer = () => {
 
     if(!allRestarant) return null;
 
-    if(filteredRestaurants?.length === 0) return <h1>No restaurant Found!</h1>
+    // if(filteredRestaurants?.length === 0) return <h1>No restaurant Found</h1>
 
     return allRestarant.length === 0 ? (<Shimmer/> ) : (
         <>
@@ -48,7 +49,9 @@ const RestaurantContainer = () => {
                 </div>
             </div>
             <div className='card-container'>
+
                 {
+                    (filteredRestaurants.length === 0) ? <h1>No restaurant Found</h1> :
                     filteredRestaurants.map((restaurant) =>{
                         return <RestaurantCard {...restaurant} key={restaurant.id} />
                     })
