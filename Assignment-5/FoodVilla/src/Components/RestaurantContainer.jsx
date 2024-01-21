@@ -35,8 +35,6 @@ const RestaurantContainer = () => {
 
     if(!allRestarant) return null;
 
-    // if(filteredRestaurants?.length === 0) return <h1>No restaurant Found</h1>
-
     return allRestarant.length === 0 ? (<Shimmer/> ) : (
         <>
             <div className="form-container p-4">
@@ -49,7 +47,6 @@ const RestaurantContainer = () => {
                 </div>
             </div>
             <div className='card-container'>
-
                 {
                     (filteredRestaurants.length === 0) ? <h1>No restaurant Found</h1> :
                     filteredRestaurants.map((restaurant) =>{

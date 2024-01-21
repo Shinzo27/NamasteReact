@@ -8,3 +8,18 @@
     display: flex;
     flex-wrap: wrap;
 }
+
+.shimmer-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 100px;
+}
+
+.shimmer-card {
+    height: 200px;
+    width: 180px;
+    background-color: lightgrey;
+    margin: 20px;
+}
