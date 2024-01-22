@@ -1,6 +1,7 @@
 import * as React from "react";
 import "../App.css";
 import img from "../assets/logo.png"
+import { Link } from "react-router-dom";
 
 function Header() {
   return (
@@ -24,24 +25,24 @@ function Header() {
         <div className="collapse navbar-collapse" id="navbarColor02">
           <ul className="navbar-nav mr-auto">
             <li className="nav-item active">
-              <a className="nav-link" href="#">
+              <Link className="nav-link" to="/">
                 Home
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <Link className="nav-link" to="/features">
                 Features
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <Link className="nav-link" to="/pricing">
                 Pricing
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <Link className="nav-link" to="/about">
                 About
-              </a>
+              </Link>
             </li>
           </ul>
         </div>

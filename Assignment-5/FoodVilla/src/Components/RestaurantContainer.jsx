@@ -4,6 +4,7 @@ import '../App.css'
 import RestaurantCard from './RestaurantCard';
 import { restaurantList } from '../Data/Restaurant'
 import Shimmer from './Shimmer';
+import { Link } from 'react-router-dom';
 
 function filterData(searchText, restaurants){
     const filterData = restaurants.filter( (restaurant) =>
@@ -24,11 +25,11 @@ const RestaurantContainer = () => {
     
     async function getRestaurants() {
         const data = await fetch(
-            'https://api.escuelajs.co/api/v1/products'
+            'https://fakestoreapi.com/products'
         );
 
         const json = await data.json();
-        // console.log(json)
+        console.log(json)
         setAllRestarant(json)
         setFilteredRestaurants(json);
     }
@@ -50,7 +51,11 @@ const RestaurantContainer = () => {
                 {
                     (filteredRestaurants.length === 0) ? <h1>No restaurant Found</h1> :
                     filteredRestaurants.map((restaurant) =>{
-                        return <RestaurantCard {...restaurant} key={restaurant.id} />
+                        return (
+                            <Link to={"/product/"+restaurant.id}>
+                                <RestaurantCard {...restaurant} key={restaurant.id} />
+                            </Link>
+                        )
                     })
                 }
             </div>
