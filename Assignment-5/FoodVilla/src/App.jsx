@@ -7,8 +7,11 @@ import Features from './Components/Features';
 import Pricing from './Components/Pricing';
 import About from './Components/About';
 import ProductDetails from './Components/ProductDetails';
+import { Suspense, lazy } from 'react';
+import Shimmer from './Components/Shimmer';
 
 function App() {
+  const Instamart = lazy(() => import("./Components/Instamart"));
 
   return (
     <>
@@ -19,6 +22,8 @@ function App() {
           <Route path='/pricing' element={<Pricing/>}/>
           <Route path='/about' element={<About/>}/>
           <Route path='/product/:id' element={<ProductDetails/>}/>
+          <Route path='/instamart' element={<Suspense fallback={<Shimmer/>}><Instamart/></Suspense>}/>
+          
         </Routes>
       <Footer/>
     </>

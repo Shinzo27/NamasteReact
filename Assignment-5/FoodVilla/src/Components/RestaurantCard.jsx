@@ -1,5 +1,6 @@
 import React from 'react'
 import '../App.css'
+import { Link } from 'react-router-dom'
 
 const RestaurantCard = (props) => {
   return (
@@ -11,7 +12,7 @@ const RestaurantCard = (props) => {
             <div className="card-body">
                 <h5 className="card-title" style={{fontWeight:"700"}}>{props.title}</h5>
                 <p className="card-text">{props.price} $</p>
-                <a href="#" className="btn btn-primary">Order Now</a>
+                <button to="/" className="btn btn-primary">Order Now</button>
             </div>
         </div>
     </div>

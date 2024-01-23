@@ -2,7 +2,6 @@ import React, { useEffect } from 'react'
 import { useState } from 'react';
 import '../App.css'
 import RestaurantCard from './RestaurantCard';
-import { restaurantList } from '../Data/Restaurant'
 import Shimmer from './Shimmer';
 import { Link } from 'react-router-dom';
 
@@ -15,7 +14,7 @@ function filterData(searchText, restaurants){
 }
 
 const RestaurantContainer = () => {
-    const [allRestarant, setAllRestarant] = useState([])
+    const [allRestaurant, setAllRestaurant] = useState([])
     const [filteredRestaurants, setFilteredRestaurants] = useState([]);
     const [searchText, setSearchText] = useState("")
 
@@ -29,20 +28,20 @@ const RestaurantContainer = () => {
         );
 
         const json = await data.json();
-        console.log(json)
-        setAllRestarant(json)
+        // console.log(json)
+        setAllRestaurant(json)
         setFilteredRestaurants(json);
     }
 
-    if(!allRestarant) return null;
+    if(!allRestaurant) return null;
 
-    return allRestarant.length === 0 ? (<Shimmer/> ) : (
+    return allRestaurant.length === 0 ? (<Shimmer/> ) : (
         <>
             <div className="form-container p-4">
                 <div className="d-flex mx-2">
                     <input className="form-control me-2" placeholder="Search" aria-label="Search" value={searchText} onChange={(e)=>{ setSearchText(e.target.value)}}/>
                     <button className="btn btn-success" onClick={()=>{    
-                        const data = filterData(searchText, allRestarant);
+                        const data = filterData(searchText, allRestaurant);
                         setFilteredRestaurants(data);
                     }}>Search</button>
                 </div>
@@ -52,8 +51,8 @@ const RestaurantContainer = () => {
                     (filteredRestaurants.length === 0) ? <h1>No restaurant Found</h1> :
                     filteredRestaurants.map((restaurant) =>{
                         return (
-                            <Link to={"/product/"+restaurant.id}>
-                                <RestaurantCard {...restaurant} key={restaurant.id} />
+                            <Link to={"/product/"+restaurant.id} key={restaurant.id}>
+                                <RestaurantCard {...restaurant} />
                             </Link>
                         )
                     })

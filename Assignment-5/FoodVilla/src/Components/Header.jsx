@@ -44,6 +44,11 @@ function Header() {
                 About
               </Link>
             </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/instamart">
+                Instamart
+              </Link>
+            </li>
           </ul>
         </div>
         
