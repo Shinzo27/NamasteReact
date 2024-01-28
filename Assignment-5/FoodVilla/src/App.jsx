@@ -2,7 +2,7 @@ import './App.css'
 import Header from './Components/Header'
 import Body from './Components/Body'
 import Footer from './Components/Footer'
-import { Routes, Route, createBrowserRouter, Outlet, BrowserRouter } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import Features from './Components/Features';
 import Pricing from './Components/Pricing';
 import About from './Components/About';
