@@ -6,7 +6,8 @@ function App() {
 
   return (
     <>
-      <h1>Todo List with Redux</h1>
+      <h1>Todo List with Redux || Back to work</h1>
+      
       <AddTodo/>
       <Todos/>
     </>
