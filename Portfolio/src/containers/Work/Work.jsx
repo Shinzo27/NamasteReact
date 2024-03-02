@@ -1,7 +1,7 @@
 import React from 'react'
-import './Header.scss'
+import './Work.scss'
 
-const Header = () => {
+const Work = () => {
   return (
     <div>
       
@@ -9,4 +9,4 @@ const Header = () => {
   )
 }
 
-export default Header
+export default Work

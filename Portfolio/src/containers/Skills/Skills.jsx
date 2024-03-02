@@ -1,7 +1,7 @@
 import React from 'react'
-import './Header.scss'
+import './Skills.scss'
 
-const Header = () => {
+const Skills = () => {
   return (
     <div>
       
@@ -9,4 +9,4 @@ const Header = () => {
   )
 }
 
-export default Header
+export default Skills
