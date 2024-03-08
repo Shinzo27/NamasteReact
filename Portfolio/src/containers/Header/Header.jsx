@@ -16,6 +16,7 @@ const scaleVariant = {
 }
 
 const Header = () => {
+  console.log(import.meta.env.REACT_APP_SANITY_PROJECT_ID)
   return (
     <div className='app__header app__flex'>
       <motion.div 
