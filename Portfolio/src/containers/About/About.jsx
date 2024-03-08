@@ -6,12 +6,19 @@ import { urlFor, client } from '../../client'
 
 const About = () => {
   const [ abouts, setAbouts ] = useState([]);
+  let PROJECT_ID = "egh2tbgp";
+  let DATASET = "production";
+  let QUERY = '*[_type == "abouts"]';
 
+  let URL = `https://${PROJECT_ID}.api.sanity.io/v2022-02-01/data/query/${DATASET}?query=${QUERY}`;
   useEffect(()=>{
-    const query = '*[_type == "abouts"]';
 
-    client.fetch(query)
-      .then((data) => setAbouts(data))
+    fetch(URL)
+      .then((res) => res.json())
+      .then(({result}) => {
+        console.log(result);
+        setAbouts(result);
+      })
   }, [])
 
   return (
@@ -28,7 +35,7 @@ const About = () => {
             className='app__profile-item'
             key={about.title + index}
           >
-            <img src={about.imgUrl} alt={about.title}/>
+            <img src={urlFor(about.imgUrl)} alt={about.title}/>
             <h1 className='bold-text' style={{ marginTop: 20 }}>{about.title}</h1>
             <p className='p-text' style={{ marginTop: 10 }}>{about.description}</p>
           </motion.div>

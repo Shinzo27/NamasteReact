@@ -6,7 +6,8 @@ export const client = createClient({
     dataset: 'production',
     apiVersion: '2022-02-01',
     useCdn: true,
-    token: import.meta.env.REACT_APP_SANITY_TOKEN,
+    token: 'skmhst8BDBu0tJgs2SEG47c1074sX3bNYqoaoRQE5FEg2PiizwEkOkQ8DyFcjBOP6NdpxKJfpDiG28mV6OEgvtzGf0LHDKgBXH8rKlyIBf9QgIenMLNiOoSMMdg4k5ZVN0FAMFORLJYrjQhXGVsuVzRBfkl48ifFuc9AVK1G9QsDLkEv7rj0',
+    ignoreBrowserTokenWarning: true,
 })
 
 const builder = imageUrlBuilder(client);
