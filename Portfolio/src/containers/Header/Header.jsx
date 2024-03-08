@@ -2,6 +2,7 @@ import React from 'react'
 import './Header.scss'
 import { motion } from 'framer-motion';
 import { images } from '../../constants';
+import AppWrap from '../../Wrapper/AppWrap';
 
 
 const scaleVariant = {
@@ -70,4 +71,4 @@ const Header = () => {
   )
 }
 
-export default Header
+export default AppWrap(Header, 'home')
