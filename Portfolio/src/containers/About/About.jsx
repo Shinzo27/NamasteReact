@@ -23,7 +23,7 @@ const About = () => {
 
   return (
     <>
-      <h2 className='head-text' style={{paddingTop: 40}}>I know that <span>Good Design</span><br/> means <span>Good Business</span>
+      <h2 className='head-text' style={{paddingTop: 40}}>I know that <span>Good Design</span><br/> means <span>Good Business!!</span>
       </h2>
 
       <div className='app__profiles'>
