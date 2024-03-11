@@ -11,7 +11,19 @@ const Work = () => {
   const [ filterWorks, setFilterWorks ] = useState([]);
 
   const handleWorkFilter = (item) => {
+    setActiveFilter(item)
+    setAnimateCard([{y:100, opacity: 0}])
 
+    setTimeout(() => {
+      setAnimateCard([{y:0, opacity: 1}])
+
+      if(item === 'All'){
+        setFilterWorks(Works)
+      }
+      else {
+        setFilterWorks(Works.filter((work)=>work.tags.includes(item)))
+      }
+    }, 500);
   }
 
   let PROJECT_ID = "egh2tbgp";
