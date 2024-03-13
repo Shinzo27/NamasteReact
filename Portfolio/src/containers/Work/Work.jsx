@@ -4,6 +4,7 @@ import { AiFillEye, AiFillGithub } from 'react-icons/ai'
 import { motion } from 'framer-motion';
 import { AppWrap } from '../../Wrapper'
 import { urlFor, client } from '../../client'
+
 const Work = () => {
   const [activeFilter, setActiveFilter] = useState('All')
   const [animateCard, setAnimateCard] = useState({ y: 0, opacity: 1});
