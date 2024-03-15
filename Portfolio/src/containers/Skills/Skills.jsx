@@ -14,7 +14,7 @@ const Skills = () => {
 
   let PROJECT_ID = "egh2tbgp";
   let DATASET = "production";
-  let QUERY = '*[_type == "workExperience"]';
+  let QUERY = '*[_type == "experiences"]';
   let skillsQuery = '*[_type == "skills"]'
 
   let ExpURL = `https://${PROJECT_ID}.api.sanity.io/v2022-02-01/data/query/${DATASET}?query=${QUERY}`;
@@ -62,16 +62,16 @@ const Skills = () => {
           ))}
         </motion.div>
         <div className="app__skills-exp">
-          {Experiences?.map((experience) => (
+          {Experiences.map((experience) => (
             <motion.div
               className="app__skills-exp-item"
-              key={experience.year}
+              key={experience.name}
             >
               <div className="app__skills-exp-year">
                 <p className="bold-text">{experience.year}</p>
               </div>
               <motion.div className="app__skills-exp-works">
-                {experience?.works?.map((work) => (
+                {experience.works.map((work) => (
                   <>
                     <motion.div
                       whileInView={{ opacity: [0, 1] }}
@@ -103,4 +103,4 @@ const Skills = () => {
   )
 }
 
-export default Skills
+export default AppWrap(Skills, 'skills');
